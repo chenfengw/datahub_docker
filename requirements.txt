@@ -1,0 +1,10 @@
+termcolor
+tb-nightly
+imageio
+imageio-ffmpeg
+scikit-image
+absl-py
+pyparsing
+pillow
+dm_control
+git+git://github.com/1nadequacy/dmc2gym.git

@@ -2,7 +2,6 @@
 # scipy/machine learning (tensorflow, pytorch)
 # https://hub.docker.com/repository/docker/ucsdets/scipy-ml-notebook/tags
 FROM ucsdets/scipy-ml-notebook:2021.3-42158c8
-# FROM pytorch/pytorch:1.8.1-cuda11.1-cudnn8-devel
 LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 
 # 2) change to root to install packages
@@ -17,10 +16,6 @@ RUN mkdir -p ~/.mujoco && mv ./mujoco210 ~/.mujoco/mujoco210
 # 3) install packages for python
 COPY ./requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt && rm requirements.txt
-
-# set up jupyter stuff
-# COPY ./run_jupyter.sh /
-# RUN chmod 755 /run_jupyter.sh
 
 # set enviroment variable
 ENV MUJOCO_GL egl
